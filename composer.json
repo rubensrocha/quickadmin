@@ -16,6 +16,7 @@
   "require": {
     "laravel/framework": "6.*",
     "laravelcollective/html": "6.*",
+    "laravel/ui": "^1.1",
     "intervention/image": "^2.3",
     "yajra/laravel-datatables-oracle": "^9"
   },
