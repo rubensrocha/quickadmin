@@ -14,6 +14,7 @@ Finally, see free alternatives in our article on Laravel News: [13 Laravel Admin
 ### Please note: QuickAdmin requires fresh Laravel installation and is not suitable for use on already existing project.
 
 **_NOTE_** This package supports the auto-discovery feature of Laravel 5.5, So skip step 2 if you're using Laravel 5.5.
+**_NOTE 2_** This package requires laravel/ui package if you're using Laravel 6.
 1. Install the package via `composer require laraveldaily/quickadmin`.
 2. Add `Laraveldaily\Quickadmin\QuickadminServiceProvider::class,` to your `\config\app.php` providers **after `App\Providers\RouteServiceProvider::class,`** otherwise you will not be able to add new ones to freshly generated controllers.
 3. Configure your .env file with correct database information
