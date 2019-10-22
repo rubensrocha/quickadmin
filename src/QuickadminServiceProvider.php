@@ -70,16 +70,21 @@ class QuickadminServiceProvider extends ServiceProvider
         $this->app->make('Laraveldaily\Quickadmin\Builders\ControllerBuilder');
         $this->app->make('Laraveldaily\Quickadmin\Builders\ViewsBuilder');
         $this->app->make('Laraveldaily\Quickadmin\Events\UserLoginEvents');
-        // Register dependency packages
-        //$this->app->register('Collective\Html\HtmlServiceProvider');
-        //$this->app->register('Intervention\Image\ImageServiceProvider');
-        //$this->app->register('Yajra\Datatables\DatatablesServiceProvider');
-        // Register dependancy aliases
-        //$loader = \Illuminate\Foundation\AliasLoader::getInstance();
-        //$loader->alias('HTML', 'Collective\Html\HtmlFacade');
-        //$loader->alias('Form', 'Collective\Html\FormFacade');
-        //$loader->alias('Image', 'Intervention\Image\Facades\Image');
-        //$loader->alias('Datatables', 'Yajra\Datatables\Datatables');
+		
+		//Optional for Laravel < 5.5
+		if($this->app->version() < 5.5){
+			// Register dependency packages
+			$this->app->register('Collective\Html\HtmlServiceProvider');
+			$this->app->register('Intervention\Image\ImageServiceProvider');
+			$this->app->register('Yajra\Datatables\DatatablesServiceProvider');
+			// Register dependancy aliases
+			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
+			$loader->alias('HTML', 'Collective\Html\HtmlFacade');
+			$loader->alias('Form', 'Collective\Html\FormFacade');
+			$loader->alias('Image', 'Intervention\Image\Facades\Image');
+			$loader->alias('Datatables', 'Yajra\Datatables\Datatables');
+		}
+        
     }
 
 }
